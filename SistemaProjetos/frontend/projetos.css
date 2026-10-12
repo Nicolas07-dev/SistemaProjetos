@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    padding: 24px;
+    background: #263238;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px;
+}
+
+main {
+    width: 92%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+    padding: 10px;
+}
+
+input,
+textarea,
+select {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button {
+    background: #176b47;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #105235;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-lista h2 {
+    margin: 0;
+}
+
+.projeto {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.projeto h3 {
+    margin-top: 0;
+}
+
+.descricao {
+    white-space: pre-wrap;
+}
+
+.excluir {
+    background: #b3261e;
+}
+
+.excluir:hover {
+    background: #8b1e17;
+}
+
+#mensagem {
+    min-height: 20px;
+}
+
+#mensagem.erro {
+    color: #b3261e;
+}
+
+.projeto button + button {
+    margin-left: 10px;
+}
+
+.projeto button:last-child {
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.projeto button:last-child:hover {
+    background-color: #a61f1f;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 16px;
+    }
+
+    .titulo-lista {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
