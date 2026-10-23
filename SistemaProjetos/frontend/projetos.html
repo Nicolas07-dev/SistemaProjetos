@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Sistema de Projetos</title>
+
+    <link
+        href="projetos.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+
+    <section
+        class="login-screen"
+        id="login-screen"
+    >
+        <div class="login-card">
+
+            <div class="login-logo">
+                ▦
+            </div>
+
+            <h1>Sistema de Projetos</h1>
+
+            <p>
+                Acesse sua conta de administrador
+            </p>
+
+            <form id="login-form">
+
+                <label for="login-usuario">
+                    Nome de usuário
+                </label>
+
+                <input
+                    id="login-usuario"
+                    autocomplete="username"
+                    placeholder="Seu usuário"
+                    required
+                >
+
+                <label for="login-senha">
+                    Senha
+                </label>
+
+                <input
+                    id="login-senha"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Sua senha"
+                    required
+                >
+
+                <p
+                    class="login-erro"
+                    id="login-erro"
+                    role="alert"
+                ></p>
+
+                <button
+                    class="btn primary"
+                    id="login-botao"
+                    type="submit"
+                >
+                    Entrar no sistema →
+                </button>
+
+            </form>
+
+            <small>
+                Use o usuário e a senha cadastrados
+                no Java Swing.
+            </small>
+
+        </div>
+    </section>
+
+
+    <div
+        class="app"
+        id="app-principal"
+        hidden
+    >
+
+        <aside class="sidebar">
+
+            <!-- LOGOTIPO -->
+
+            <div class="brand">
+
+                <span class="brand-icon">
+                    ▦
+                </span>
+
+                <span>
+                    SISTEMA
+                    <br>
+                    DE PROJETOS
+                </span>
+
+            </div>
+
+
+            <!-- NAVEGAÇÃO -->
+
+            <nav id="nav">
+
+                <button
+                    class="active"
+                    data-page="projetos"
+                >
+                    ▣
+                    <span>Projetos</span>
+                </button>
+
+                <button data-page="dashboard">
+                    ◫
+                    <span>Dashboard</span>
+                </button>
+
+                <button data-page="categorias">
+                    ▤
+                    <span>Categorias</span>
+                </button>
+
+                <button data-page="relatorios">
+                    ▥
+                    <span>Relatórios</span>
+                </button>
+
+                <button data-page="configuracoes">
+                    ⚙
+                    <span>Configurações</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="usuario-logado">
+                            Administrador
+                        </strong>
+
+                        <small>
+                            Administrador
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="logout"
+                    id="sair"
+                >
+                    ↪ Sair
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <div class="main">
+
+            <!-- CABEÇALHO -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1 id="page-title">
+                        Gerenciamento de Projetos
+                    </h1>
+
+                    <p>
+                        Organize e acompanhe seus projetos
+                        em um só lugar
+                    </p>
+
+                </div>
+
+                <div class="top-actions">
+
+                    <span id="relogio"></span>
+
+                    <button
+                        class="btn secondary"
+                        id="theme-toggle"
+                    >
+                        ☾ Tema escuro
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <main class="content">
+
+
+                <section
+                    class="stats"
+                    id="stats"
+                >
+
+
+                    <article class="stat">
+
+                        <span class="stat-icon blue">
+                            ▦
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Total de projetos
+                            </small>
+
+                            <strong id="stat-total">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="stat">
+
+                        <span class="stat-icon green">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Concluídos
+                            </small>
+
+                            <strong id="stat-concluidos">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat">
+
+                        <span class="stat-icon orange">
+                            ◷
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Em desenvolvimento
+                            </small>
+
+                            <strong id="stat-andamento">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat">
+
+                        <span class="stat-icon purple">
+                            ▤
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Planejados
+                            </small>
+
+                            <strong id="stat-planejados">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <section
+                    class="page active"
+                    id="page-projetos"
+                >
+
+                    <div class="project-layout">
+
+
+
+                        <section class="panel form-panel">
+
+                            <div class="panel-heading">
+
+                                <h2 id="form-title">
+                                    Cadastro de Projeto
+                                </h2>
+
+                                <p>
+                                    Preencha os dados do projeto
+                                </p>
+
+                            </div>
+
+
+                            <form id="form-projeto">
+
+                                <label for="nome">
+                                    Nome do projeto
+                                </label>
+
+                                <input
+                                    id="nome"
+                                    maxlength="120"
+                                    placeholder="Ex.: Sistema de estoque"
+                                    required
+                                >
+
+                                <label for="descricao">
+                                    Descrição
+                                </label>
+
+                                <textarea
+                                    id="descricao"
+                                    placeholder="Descreva o projeto..."
+                                    rows="4"
+                                    required
+                                ></textarea>
+
+
+                                <label for="categoria">
+                                    Categoria
+                                </label>
+
+                                <select
+                                    id="categoria"
+                                    required
+                                ></select>
+
+
+                                <label for="status">
+                                    Status
+                                </label>
+
+                                <select id="status">
+
+                                    <option>
+                                        Planejado
+                                    </option>
+
+                                    <option>
+                                        Em desenvolvimento
+                                    </option>
+
+                                    <option>
+                                        Concluído
+                                    </option>
+
+                                </select>
+
+
+                                <div class="form-actions">
+
+                                    <button
+                                        class="btn primary"
+                                        id="salvar"
+                                        type="submit"
+                                    >
+                                        ＋ Cadastrar
+                                    </button>
+
+                                    <button
+                                        class="btn secondary"
+                                        id="limpar"
+                                        type="button"
+                                    >
+                                        Limpar
+                                    </button>
+
+                                    <button
+                                        class="btn danger"
+                                        id="excluir-selecionado"
+                                        type="button"
+                                        hidden
+                                    >
+                                        Excluir
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <section class="panel list-panel">
+
+                            <div class="panel-heading split">
+
+                                <div>
+
+                                    <h2>
+                                        Lista de Projetos
+                                    </h2>
+
+                                    <p>
+                                        Consulte e gerencie seus projetos
+                                    </p>
+
+                                </div>
+
+                                <button
+                                    class="btn secondary"
+                                    id="atualizar"
+                                >
+                                    ↻ Atualizar
+                                </button>
+
+                            </div>
+
+                            <div class="filters">
+
+                                <input
+                                    id="busca"
+                                    placeholder="⌕ Pesquisar por nome..."
+                                >
+
+                                <select id="filtro-categoria">
+
+                                    <option value="">
+                                        Todas as categorias
+                                    </option>
+
+                                </select>
+
+                                <select id="filtro-status">
+
+                                    <option value="">
+                                        Todos os status
+                                    </option>
+
+                                    <option>
+                                        Planejado
+                                    </option>
+
+                                    <option>
+                                        Em desenvolvimento
+                                    </option>
+
+                                    <option>
+                                        Concluído
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="table-wrap">
+
+                                <table>
+
+                                    <thead>
+
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Categoria</th>
+                                            <th>Status</th>
+                                            <th>Ações</th>
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody id="projetos-body">
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                            <div class="table-footer">
+
+                                <span id="contagem">
+                                    0 projetos
+                                </span>
+
+
+
+                                <div class="pagination">
+
+                                    <button
+                                        class="btn secondary"
+                                        id="anterior"
+                                    >
+                                        ‹
+                                    </button>
+
+                                    <span id="pagina-label">
+                                        1 / 1
+                                    </span>
+
+                                    <button
+                                        class="btn secondary"
+                                        id="proximo"
+                                    >
+                                        ›
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </section>
+
+
+                <section
+                    class="page"
+                    id="page-dashboard"
+                >
+
+                    <div class="dashboard-grid">
+
+
+
+                        <article class="panel">
+
+                            <h2>
+                                Projetos por status
+                            </h2>
+
+                            <div
+                                class="bars"
+                                id="grafico-status"
+                            ></div>
+
+                        </article>
+
+
+                        <article class="panel">
+
+                            <h2>
+                                Projetos por categoria
+                            </h2>
+
+                            <div
+                                class="bars"
+                                id="grafico-categorias"
+                            ></div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <section
+                    class="page"
+                    id="page-categorias"
+                >
+
+                    <article class="panel">
+
+                        <div class="panel-heading split">
+
+                            <div>
+
+                                <h2>
+                                    Gerenciamento de Categorias
+                                </h2>
+
+                                <p>
+                                    Cadastre e organize as categorias
+                                    disponíveis
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="btn primary"
+                                id="nova-categoria"
+                            >
+                                ＋ Nova categoria
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="table-wrap">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+                                        <th>Categoria</th>
+                                        <th>Projetos vinculados</th>
+                                        <th>Ações</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="categorias-body">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <section
+                    class="page"
+                    id="page-relatorios"
+                >
+
+                    <article class="panel">
+
+                        <div class="panel-heading">
+
+                            <h2>
+                                Relatório de Projetos
+                            </h2>
+
+                            <p>
+                                Filtre os dados e exporte o resultado
+                            </p>
+
+                        </div>
+
+
+                        <div class="filters">
+
+                            <select id="rel-categoria">
+
+                                <option value="">
+                                    Todas as categorias
+                                </option>
+
+                            </select>
+
+                            <select id="rel-status">
+
+                                <option value="">
+                                    Todos os status
+                                </option>
+
+                                <option>
+                                    Planejado
+                                </option>
+
+                                <option>
+                                    Em desenvolvimento
+                                </option>
+
+                                <option>
+                                    Concluído
+                                </option>
+
+                            </select>
+
+
+                            <button
+                                class="btn primary"
+                                id="exportar-csv"
+                            >
+                                Exportar CSV
+                            </button>
+
+                            <button
+                                class="btn secondary"
+                                id="imprimir-relatorio"
+                            >
+                                Imprimir / PDF
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="table-wrap">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Categoria</th>
+                                        <th>Status</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody id="relatorio-body">
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+
+                        <p
+                            class="muted"
+                            id="rel-resumo"
+                        ></p>
+
+                    </article>
+
+                </section>
+
+
+                <section
+                    class="page"
+                    id="page-configuracoes"
+                >
+
+
+                    <article class="panel settings">
+
+                        <h2>
+                            Preferências de aparência
+                        </h2>
+
+                        <p>
+                            Escolha o tema da interface web.
+                            A preferência é salva neste navegador.
+                        </p>
+
+                        <button
+                            class="btn primary"
+                            id="theme-settings"
+                        >
+                            Alternar tema
+                        </button>
+
+                    </article>
+
+
+                    <article class="panel settings">
+
+                        <h2>
+                            Sobre o sistema
+                        </h2>
+
+                        <p>
+                            Sistema de Projetos — Interface Web
+                            integrada à API REST Java.
+                        </p>
+
+                    </article>
+
+                </section>
+
+
+                <p
+                    id="mensagem"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="projetos.js"></script>
+
+</body>
+
+</html>
