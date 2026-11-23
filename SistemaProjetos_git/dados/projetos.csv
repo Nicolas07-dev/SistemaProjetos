@@ -8,5 +8,4 @@ id;nome;descricao;categoria;status;dataCriacao;prazo
 8;Teste Prazo Atual;Teste de prazo igual a criacao;Software;Planejado;2026-11-21;2026-11-21
 9;Teste Prazo Futuro;Teste de prazo em data futura;Software;Planejado;2026-11-21;2026-12-30
 10;Sistema de Teste;Teste de validacao do nome curto;Software;Planejado;2026-11-21;2026-12-30
-12;afffafafadfadf;ffaerfefFwefEFd;Software;Em Desenvolvimento;2026-11-21;2026-12-13
-13;Projeto Teste;123456789087;Software;Planejado;2026-11-21;2026-12-31
+11;Projeto Teste;123456789087;Software;Planejado;2026-11-21;2026-12-31
