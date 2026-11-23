@@ -1,6 +1,0 @@
-# Arquivos gerados (não precisam ir para o GitHub)
-/bin/
-/bin_novo/
-/build_check/
-/logs/
-*.class
