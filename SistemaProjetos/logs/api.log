@@ -1,0 +1,11 @@
+[23/11/2026 14:16:19] INFO - POST /api/auth/login - STATUS=200
+[23/11/2026 14:16:19] INFO - GET /api/projetos - STATUS=200
+[23/11/2026 14:16:19] INFO - GET /api/categorias - STATUS=200
+[23/11/2026 14:16:22] INFO - DELETE /api/projetos/12 - STATUS=204
+[23/11/2026 14:16:23] INFO - GET /api/projetos - STATUS=200
+[23/11/2026 14:16:23] INFO - GET /api/categorias - STATUS=200
+[23/11/2026 14:16:24] INFO - GET /api/projetos - STATUS=200
+[23/11/2026 14:16:24] INFO - GET /api/categorias - STATUS=200
+[23/11/2026 14:16:24] INFO - GET /api/projetos - STATUS=200
+[23/11/2026 14:16:24] INFO - GET /api/categorias - STATUS=200
+[23/11/2026 14:16:42] INFO - POST /api/auth/logout - STATUS=200
