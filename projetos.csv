@@ -1,0 +1,12 @@
+id;nome;descricao;categoria;status;dataCriacao;prazo
+2;Sistema Acadêmico;Sistema de gerenciamento acadêmico;Software;Concluído;2026-11-01;2026-11-01
+3;Sistema Desktop;Sistema de monitoramento desktop;Desktop;Planejado;2026-11-09;2026-11-30
+4;Sistema de Teste;Teste de validacao do nome com espacos;Software;Planejado;2026-11-21;2026-12-30
+5;Teste Especial;Sistema de gestão: usuários, projetos e tarefas (versão 2.0)!;Software;Planejado;2026-11-21;2026-12-30
+6;Teste UTF8;Gestão de usuários, projetos e tarefas: versão 2.0!;Software;Planejado;2026-11-21;2026-12-30
+7;Teste Desenvolvimento;Teste de status valido em desenvolvimento;Software;Em Desenvolvimento;2026-11-21;2026-12-30
+8;Teste Prazo Atual;Teste de prazo igual a criacao;Software;Planejado;2026-11-21;2026-11-21
+9;Teste Prazo Futuro;Teste de prazo em data futura;Software;Planejado;2026-11-21;2026-12-30
+10;Sistema de Teste;Teste de validacao do nome curto;Software;Planejado;2026-11-21;2026-12-30
+12;afffafafadfadf;ffaerfefFwefEFd;Software;Em Desenvolvimento;2026-11-21;2026-12-13
+13;Projeto Teste;123456789087;Software;Planejado;2026-11-21;2026-12-31
